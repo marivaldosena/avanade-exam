@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teste Técnico - Avanade Angular Academy by Gama</title>
+<style type="text/css">
+body {
+  font-family: Arial, sans-serif;
+}
+
+</style>
+</head>
+<body>
+
+<h1 id="testetcnicoavanadeangularacademybygama">Teste Técnico - Avanade Angular Academy by Gama</h1>
+
+<p>Finalmente chegou o grande dia! É hora de mostrar sua habilidade e tudo que você aprendeu nas últimas semanas. Lembrando que você deve optar entre desenvolver usando Angular ou JQuery para o código Javascript e para HTML e CSS você deve usar Bootstrap 4 mesmo. O nosso desafio é desenvolver um sistema básico de login e cadastro de usuário consumindo uma API externa.</p>
+
+<p>Dito isto, então é hora de codar!</p>
+
+<h2 id="configurandoambientenowindowsmaceubuntu">Configurando ambiente no Windows, Mac e Ubuntu</h2>
+
+<p>Instalar dependências de projeto:</p>
+
+<pre><code>npm install
+</code></pre>
+
+<p>Dependências instaladas, vamos entender a estrutura inicial. Você vai encontrar alguns arquivos já criados e trabalhar a partir daí. A ideia aqui é exercitar um pouco de TDD (Test Driven Development). A primeira coisa que você precisa fazer é rodar na sua linha de comando o seguinte:</p>
+
+<p><em>Projeto Angular</em></p>
+
+<pre><code>npm start
+</code></pre>
+
+<p><em>Projeto JQuery</em></p>
+
+<pre><code>npm run-script start-local
+</code></pre>
+
+<p>E com o seu servidor aberto rode:</p>
+
+<pre><code>npm test
+</code></pre>
+
+<p>Para saber mais sobre testes de aceitação, leia sobre o framework Mocha. O primeiro teste irá passar e os demais irão falhar. Para terminar este teste o seu objetivo é fazer todos os testes passarem.</p>
+
+<h2 id="comonossaplataformaserconstruida">Como nossa plataforma será construida?</h2>
+
+<p>Nossa plataforma de cadastro/login será construida em cima de uma API que nós estamos disponibilizando para vocês, mas fiquem atentos aos verbos e restrições de cada campo.</p>
+
+<p>A pasta <code>readme-images</code> contém as imagens de todas as telas para facilitar o entendimento detalhado de como construir cada tela em cada estado.</p>
+
+<p>Vamos programar? Calma lá! Primeiro devemos definir o que vamos utilizar: <strong>Angular</strong> ou <strong>jQuery</strong>? Caso a escolha seja Angular a nossa estrutura de pastas é a padrão de um projeto angular, faremos todas as alterações dentro da pasta <code>src/</code> e poderemos também utilizar o <code>angular-cli</code> para gerar nossos modules, services e classes - e lembre-se de importar o Componente criado no router-module para gerar as rotas. Mas se você preferir fazer nosso desafio com jQuery é só abrir a pasta <code>public/</code> e seguir a estrutura de arquivos que se encontra lá, arquivos css dentro de <code>public/css/</code> e arquivos js dentro de <code>public/js/</code>, neste projeto não é necessário configurar rotas e não é permitido alterar o nome das pastas (<code>login</code> e <code>signup</code>).</p>
+
+<h3 id="teladelogin">Tela de login</h3>
+
+<p>Nesta dela deveremos criar um form com dois inputs e um button que consome a API de login ara exibir um modal com nosso usuário caso ele exista no banco.</p>
+
+<p><img src="readme-images/tela-login-medidas.jpg" alt="Login" /></p>
+
+<h3 id="teladecadastro">Tela de cadastro</h3>
+
+<p>Nesta dela deveremos criar um form com seis inputs (1 text, 1 email, 1 password, 2 selects e 1 checkbox) e um button que consome a API para exibir um modal com nosso usuário caso ele seja criado com sucesso. Além disso, é importante ressaltar que nossos selects também serão alimentados pela nossa API.</p>
+
+<p><img src="readme-images/tela-signup-medidas.jpg" alt="Cadastro" /></p>
+
+<h3 id="exemplodefuncionamento">Exemplo de funcionamento</h3>
+
+<p><img src="readme-images/exemplo-de-uso.gif" alt="GIF exemplo de uso" /></p>
+
+<h2 id="comousaraapi">Como Usar a API</h2>
+
+<blockquote>
+  <p>[<strong>POST</strong>] <em>http://api.avanade.gama.academy/users</em></p>
+
+  <p>Cria usuário no banco de dados e retorna objeto de usuário com todos os dados</p>
+
+  <p>Campos:</p>
+
+  <ul>
+  <li><strong>username</strong> - string - <em>(required, minlength: 3, maxlength: 16, pattern: [a-z0-9_-]*)</em></li>
+
+  <li><strong>email</strong> - string -<em>(required, pattern: [a-z0-9][a-z0-9._%+-]*@[a-z0-9][a-z0-9.-]*\.[a-z]{2,20})</em></li>
+
+  <li><strong>password</strong> - string -<em>(required)</em></li>
+
+  <li><strong>state</strong> - string - <em>(required)</em></li>
+
+  <li><strong>city</strong> - string - <em>(required)</em></li>
+
+  <li><strong>accepts_newsletters</strong> - boolean</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p>[<strong>POST</strong>] <em>http://api.avanade.gama.academy/login</em></p>
+
+  <p>Verifica se usuario e senha existem no banco de dados e retorna o objeto do usuário com todos os dados</p>
+
+  <p>Campos:</p>
+
+  <ul>
+  <li><strong>username</strong> - string - <em>(required, minlength: 3, maxlength: 16, pattern: [a-z0-9_-]*)</em></li>
+
+  <li><strong>email</strong> - string -<em>(required, pattern: [a-z0-9][a-z0-9._%+-]*@[a-z0-9][a-z0-9.-]*\.[a-z]{2,20})</em></li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p>[<strong>GET</strong>] <em>http://api.avanade.gama.academy/states</em></p>
+
+  <p>Retorna array com sigla de todos os estados (utilizar no select de estado)</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p>[<strong>GET</strong>] <em>http://api.avanade.gama.academy/cities/[:sigla_estado]</em></p>
+
+  <p>Retorna array com nome de todos as cidades para o estado escolhido (utilizar no select de cidades)</p>
+</blockquote>
+
+<h2 id="eostestes">E os testes?!</h2>
+
+<p>Esta prova executa um total de 10 testes de aceitação, sendo que 4 deles são de layout e o resto de comportamento do sistema.</p>
+
+<h3 id="regras">REGRAS:</h3>
+
+<ul>
+<li>o button só é ativado caso o formulário não tenha erros (deve ficar no estado disabled por padrão)</li>
+
+<li>o input é validado no estado <code>focusout</code> (no angular seria a propriedade <code>touched</code>)</li>
+
+<li>abrir modal com objeto de usuário caso a requisição seja efetuada com sucesso
+
+
+<ul>
+<li>no modal mostre o nome de usuario dentro de uma tag com o id <code>username</code></li>
+
+<li>no modal mostre o email do usuario dentro de uma tag com o id <code>email</code></li>
+
+<li>no modal mostre o estado do usuario dentro de uma tag com o id <code>state</code></li>
+
+<li>no modal mostre a cidade do usuario dentro de uma tag com o id <code>city</code></li>
+
+<li>no modal mostre se ele deseja receber emails profissionais dentro de uma tag com o id <code>accepts_newsletters</code></li></ul>
+</li>
+
+<li>as mensagens de erro devem ser exibidas em uma tag <code>small</code> com as classes <code>form-text</code> e <code>text-danger</code> após o input com erro (<code>&lt;small class="form-text text-danger"&gt;Campo inválido&lt;/small&gt;</code>)</li>
+
+<li>Os nomes dos inputs devem manter o padrão passado na descrição da API</li>
+
+<li>Só possuimos duas rotas: <code>/login</code> (também é <code>/</code>) e <code>/signup</code>. Não é permitido alterá-las</li>
+</ul>
+
+<h2 id="materialdeapoio">Material de apoio</h2>
+
+<p>Bateu aquela insegurança? Fica tranquilo que todos os links abaixo vão te auxiliar na realização da prova. A documentação é sempre a melhor companhia para o programador!! Consultem:</p>
+
+<ul>
+<li><a href="https://angular.io/guide/quickstart">QuickStart</a></li>
+
+<li><a href="https://angular.io/tutorial">Tutorial: Tour of Heroes</a></li>
+
+<li><a href="https://getbootstrap.com">Bootstrap 4</a></li>
+
+<li><a href="http://api.jquery.com/">jQuery</a></li>
+
+<li><a href="http://fontawesome.io/icons/">FontAwesome</a></li>
+</ul>
+
+<h2 id="dvidas">Dúvidas?</h2>
+
+<p>Ta confuso com alguma coisa? Achou as instruções muito superficiais? Entre em contato pelo chat em http://avanade.gama.academy que responderemos rapidinho!</p>
+
+</body>
+</html>

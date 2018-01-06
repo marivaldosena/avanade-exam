@@ -1,0 +1,74 @@
+#login {
+  width: 600px;
+  height: 310px;
+  margin: 3% auto 2px auto;
+}
+
+#register-area {
+  width: 200px;
+  height: inherit;
+  background: #6666ff;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  float: left;
+}
+
+#login-area {
+  height: inherit;
+  background: #eee;
+}
+
+#login-area h3, #login-area hr {
+  width: 95%;
+  margin: 10px 3%;
+}
+
+#login-area h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#login-area hr {
+  background-color: #ccc;
+  box-shadow: 1px 1px #ddd;
+}
+
+.btn {
+  border-radius: 25px;
+}
+
+#register-button {
+  width: 150px;
+}
+
+#login-area form {
+  width: 100%;
+  margin: 2px 3%;
+}
+
+.input-group .input-group-prepend span {
+  font-size: 1.5em;
+  padding: 2px 10px;
+  background: #ccc;
+  display: block;
+  visibility: 0.8;
+}
+
+#login-button {
+  width: 250px;
+  margin: 2px 15%;
+  background: #009933;
+}
+
+#login-area .form-group {
+  margin-bottom: 0;
+}
+
+#login-area label {
+  margin-bottom: 0;
+}

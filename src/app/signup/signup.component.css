@@ -1,0 +1,85 @@
+#registration {
+  width: 600px;
+  height: 537px;
+  margin: 3% auto 2px auto;
+}
+
+#login-area {
+  width: 200px;
+  height: inherit;
+  background: #6666ff;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  float: left;
+}
+
+#registration-area {
+  height: inherit;
+  background: #eee;
+}
+
+#registration-area h3, #registration-area hr {
+  width: 95%;
+  margin: 5px 3%;
+}
+
+#registration-area h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#registration-area hr {
+  background-color: #ccc;
+  box-shadow: 1px 1px #ddd;
+}
+
+.btn {
+  border-radius: 25px;
+}
+
+#register-button {
+  width: 150px;
+}
+
+#registration-area form {
+  width: 100%;
+  margin: 2px 3%;
+}
+
+.input-group .input-group-prepend span {
+  font-size: 1.5em;
+  padding: 2px 10px;
+  background: #ccc;
+  display: block;
+  visibility: 0.8;
+}
+
+#registration-button {
+  width: 250px;
+  margin: 2px 15%;
+  background: #009933;
+}
+
+#registration-area .form-group small {
+  color: #495057c4;
+  top: -10px;
+  position: relative;
+  margin: 0;
+}
+
+#registration-area .form-check-input {
+  margin-left: 0px;
+}
+
+#registration-area .form-group {
+  margin-bottom: 0;
+}
+
+#registration-area label {
+  margin-bottom: 0;
+}
